@@ -1,6 +1,7 @@
 package com.example.preferenciascompartidas;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,7 +17,8 @@ private MainActivityViewModel vm;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        vm=new MainActivityViewModel(getApplication());
+        //Nueva forma de crear un ViewModel
+        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
 
     }
 

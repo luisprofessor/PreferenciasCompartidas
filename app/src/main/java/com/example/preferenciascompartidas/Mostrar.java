@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -18,7 +19,9 @@ private MostrarViewModel vm;
         tvColor=findViewById(R.id.tvColor);
         tvUsuario=findViewById(R.id.tvUsuario);
 
-        vm=new MostrarViewModel(getApplication());
+        //Nueva forma de crear un ViewModel
+        vm= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MostrarViewModel.class);
+
 
         vm.getColorMutable().observe(this, new Observer<Integer>() {
             @Override
