@@ -1,0 +1,2 @@
+rootProject.name='PreferenciasCompartidas'
+include ':app'
